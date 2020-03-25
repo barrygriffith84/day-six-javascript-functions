@@ -286,7 +286,18 @@ ageChecker()
 
 // "You entered [degrees in Celsius] Celsius. That converts to [degrees in Fahrenheit] Fahrenheit." "You entered [degrees in Fahrenheit] Fahrenheit. That converts to [degrees in Celsius] Celsius."
 
+function toFahrenheit(celcius){
+    var fahrenheit = celcius * 1.8 + 32
+    console.log(`${celcius} degrees celcius is ${fahrenheit} degrees fahrenheit`)
+}
 
+function toCelcius(fahrenheit){
+    var celcius = (fahrenheit - 32) / 1.8
+    console.log(`${fahrenheit} degrees fahrenheit is ${celcius} degrees celcius`)
+}
+
+toFahrenheit(15)
+toCelcius(15)
 
 // 8. It All Adds Up!
 // Copy and paste the following code into your JavaScript file:
@@ -300,6 +311,23 @@ ageChecker()
 // Save the returned value in a variable called mySum.
 // Log mySum to the console.
 // Try changing the numbers in the array or adding new numbers.
+
+var outsideArray =  [4, 77, 8008, 11, 9, -1, 8, 2002];
+
+function addThemUp(numArray){
+    var sum = 0;
+    for(i = 0; i < numArray.length; i++){
+       sum += numArray[i]
+    }
+    return sum
+}
+
+var mySum = addThemUp(outsideArray);
+
+console.log(mySum)
+
+
+
 // 9. Law of Averages
 // Copy and paste the following code into your JavaScript file:
 
