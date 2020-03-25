@@ -226,6 +226,53 @@ printHobbies(dwayneObject.hobbies)
 // Loop through the partyGuests and check if each guest is at least 21.
 // Build a sentence or two about who can drink and who can't. (Example: " "Jery, Lila, and Mary can drink. Sam and Todd are too young.")
 // Log the sentnece to the console.
+
+var partyGuests = [
+  {
+    name: "Sam",
+    age: 18
+  },
+  {
+    name: "Jerry",
+    age: 45
+  },
+  {
+    name: "Lila",
+    age: 29
+  },
+  {
+    name: "Mary",
+    age: 68
+  },
+  {
+    name: "Todd",
+    age: 10
+  }
+]
+
+function ageChecker(){
+    var drinkingGroup = []
+    var nonDrinkingGroup = []
+    var j = 0 //drinkingGroup array iterator.  I forgot about the push function when I wrote this.
+    var h = 0 //nonDrinkingGroup array iterator
+    for(i = 0; i < partyGuests.length; i++){
+        if(partyGuests[i].age >= 21){
+            drinkingGroup[j] = ` ${partyGuests[i].name}` //Used string interpolation to add a space before the name so the formatting would look right when printed.
+            j++ 
+        }else{
+            nonDrinkingGroup[h] = ` ${partyGuests[i].name}`
+            h++
+        } 
+    }
+    
+    //Prints the array.  Slice allows me to print all but the last element of the array no matter the size of the array, so I can add "and" before the last element
+    console.log(`The people that can drink are${drinkingGroup.slice(0, drinkingGroup.length-1)}, and${drinkingGroup[drinkingGroup.length - 1]}`)  
+    console.log(`The people that can't drink are${nonDrinkingGroup.slice(0, nonDrinkingGroup.length-1)}, and${nonDrinkingGroup[nonDrinkingGroup.length - 1]}`) 
+}
+
+ageChecker()
+
+
 // 7. Celsius to Fahrenheit
 // You'll be writing two functions: one that converts Celsius to Fahrenheit and the other, vice versa.
 
@@ -238,6 +285,9 @@ printHobbies(dwayneObject.hobbies)
 // Example output:
 
 // "You entered [degrees in Celsius] Celsius. That converts to [degrees in Fahrenheit] Fahrenheit." "You entered [degrees in Fahrenheit] Fahrenheit. That converts to [degrees in Celsius] Celsius."
+
+
+
 // 8. It All Adds Up!
 // Copy and paste the following code into your JavaScript file:
 
