@@ -340,9 +340,41 @@ console.log(mySum)
 // Save the returned value in a variable called myAverage.
 // Log myAverage to the console.
 // Try adding new numbers to the outsideArray. Your function should still return the correct average no matter how many items are in the array.
+
+var scoresToAverage =  [22, 34, 62, 11, 90, 88, 70, 65, 22, 89, 85, 39, 71, 92, 98, 84, 77, 86, 54, 57];
+
+function findAverage(numArray){
+    var sum = 0;
+    var average = 0;
+    for(i = 0; i < numArray.length; i++){
+        sum += numArray[i]
+    }
+    average = sum / numArray.length
+    return average
+}
+
+var myAverage = findAverage(scoresToAverage);
+console.log(myAverage)
+
 // 10. Shipping Calculator
 // You work for an online clothing retailer. Every time an order ships, your company needs to calculate the cost of shipping so they can charge the customer correctly. Because they need to make this calculation so many times and in so many places, they've asked you to write a function that calculates shipping cost based on package weight, distance to destination, and whether or not the package is oversized.
 // The cost of shipping is always the weight of the package multiplied by the distance it needs to travel, divided by 100.
 // If the package is oversized, it adds ten dollars to the cost of shipping.
 // Write a function that accepts whatever information you need to calculate the cost of shipping and returns the cost as an integer.
 // Execute the function and output the result to the console.
+
+
+
+function shipCost(weight, distance, isOversized){
+    var cost = 0;
+    if(isOversized === true){
+        cost = weight * distance / 100 + 10
+    }else{
+            cost = weight * distance / 100
+        }
+        return cost
+}
+ 
+
+
+console.log(shipCost(20, 100, true))
